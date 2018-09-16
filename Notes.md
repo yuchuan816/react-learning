@@ -36,3 +36,33 @@
 > 保持数据的不可变性
 > 确保尽量使用纯函数，只接收一个函数，返回数据或其他函数
 > 尽量使用递归处理循环
+> 尽量使用函数代替变量赋值
+> 用高阶函数来创建函数
+
+``` js
+const compose = (...fns) =>
+  (arg) =>
+    fns.reduce(
+      (composed, f) => f(composed),
+      arg
+    )
+
+```
+
+### react 进阶
+
+1. AJAX技术的兴起也导致了单页应用（SPA）的出现。
+
+2. DOM API 是一组对象集合，JavaScript可以通过它们和浏览器交互并修改DOM。
+
+3. 在JavaScript中更新或修改已经渲染过的DOM相对来说更容易一些。不过插入新元素的过程非常低效。
+
+4. 虚拟DOM是由react元素组成的，概念上和HTML元素类似，不过他们实际上是JavaScript对象。直接访问JavaScript对象要比访问DOM API高效的多。我们可以修改JavaScript对象，即虚拟DOM，然后react通过DOM API 为用户尽可能高效的渲染这些变更。
+
+5. 浏览器的DOM是由DOM元素构成的。同样，react的DOM是由react元素构成的
+
+6. 一个react元素是对实际DOM元素应该如何表示的具体描述。换句话说，react元素表示应该如何创建浏览器DOM的一组指令。
+
+7. 一个react元素只是一个JavaScript语法，用来告知react如何构造DOM元素
+
+8. 本章介绍使用createElement和CreatFactory方法构建组件，接下来介绍JSX简化构建组建的过程
