@@ -66,3 +66,43 @@ const compose = (...fns) =>
 7. 一个react元素只是一个JavaScript语法，用来告知react如何构造DOM元素
 
 8. 本章介绍使用createElement和CreatFactory方法构建组件，接下来介绍JSX简化构建组建的过程
+
+### JSX
+
+1. className 代替 class
+
+1. JSX是JavaScript代码，因此可以直接将JSX集成到JavaScript函数内部
+
+``` js
+  <ul className="ingredients">
+      {ingredients.map((ingredient, i) =>
+          <li key={i}>{ingredient.name}</li>
+      )}
+  </ul>
+```
+
+1. 将JSX转换成浏览器可解析的格式叫转译，这也是Babel的主要功能
+
+1. 将Babel和webpack一起搭配使用，可以对JavaScript进行静态转译
+
+1. 使用ES6规范中的对象解构，我们可以让组件通过名称将这些字段的作用域本地化
+
+1. 模块化绑定的两个主要优点是模块化和网络性能。
+
+1. 模块化使得用户可以将源代码分解成易于使用的部分或模块，特别是对于团队开发来说，特别有用。
+
+1. 网络性能的优点在于浏览器只需载入依赖即可。将所有的依赖打包成单个文件后，只需发送一次http请求，就能加载所有必须资源。避免额外的网络延迟。
+
+1. webpack还可以处理
+
+    - 代码拆分
+    > 将代码拆分成不同的片段，使得用户可以按需加载它们。起目标是为不同页面或者设备的需要对代码进行拆分打包
+    - 代码压缩
+    - 特性标记
+    - 热替换
+
+1. 较小的组件更容易理解，测试和复用。在需要对应用程序进行性能扩展时，他们也更容易替换
+
+1. webpack 的默认配置文件始终是`webpack.config.js`
+
+1. 源代码映射文件`.map`就是一个描述已打包的bundle文件和原来的源代码一一对应的关系的文件
