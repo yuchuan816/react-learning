@@ -134,3 +134,21 @@ const compose = (...fns) =>
 1. render方法本身就是组件生命周期的一部分。有两种主要的生命周期：挂载生命周期和更新生命周期。
 
 1. 当用户使用creatClass时，getDefaultProps方法会被触发首先获得组件的属性。然后，getInitialState方法将会被触发，用于初始化State。
+
+1. 一旦属性被获取并且也初始化了State，componentWillMount方法将被触发。该方法是在DOM被渲染之前触发的， 并且可以用来初始化第三方脚本库、启动动画、请求数据、以及其他可能需要在组件被渲染之前执行的额外步骤。还可以在该方法中触发setState方法，在组建被初次渲染之前修改组件的State。
+
+1. componentDidMount方法是另外一个创建API请求的好地方。该方法会在组件渲染完毕之后触发，该方法中的任意setState方法调用都将启动更新生命周期，并且重新渲染组件。该方法也是初始化任何需要用到DOM的第三方JavaScript的好地方。
+
+1. componentWillUnmount可以用于清除诸如intervals或者timers这样的后台进程。
+
+1. 当一个根组件被卸载时，它的子组件将会首先被卸载
+
+1. 更新生命周期会在每次调用setState方法之后启动，在更新生命周期方法中，只有componentWillReceiveProps方法内部调用才能setState方法。
+
+1. componentWillReceiveProps 仅当新的属性被传递给了组件后才会调用。
+
+1. 重写渲染组件并不是重新挂载，如果它们已经存在那里，更新将会替代挂载。当一个组件被更新了，它的所有子元素也被更新了
+
+1. shouldComponentUpdata方法可以比较新旧属性之间的差异。新属性会作为参数传给该方法，旧属性仍然在当前的props中，并且该组件还未被更新。
+
+1. componentsWillUpdate和componentsDidupdate是更新之前或者之后与DOM交互的好地方
