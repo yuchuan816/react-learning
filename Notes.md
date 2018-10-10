@@ -152,3 +152,5 @@ const compose = (...fns) =>
 1. shouldComponentUpdata方法可以比较新旧属性之间的差异。新属性会作为参数传给该方法，旧属性仍然在当前的props中，并且该组件还未被更新。
 
 1. componentsWillUpdate和componentsDidupdate是更新之前或者之后与DOM交互的好地方
+
+1. componentWillReceiveProps生命周期方法会在属性被伏组件修改时触发。并且这些变更的属性可以用来修改内部的State
