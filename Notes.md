@@ -154,3 +154,19 @@ const compose = (...fns) =>
 1. componentsWillUpdate和componentsDidupdate是更新之前或者之后与DOM交互的好地方
 
 1. componentWillReceiveProps生命周期方法会在属性被伏组件修改时触发。并且这些变更的属性可以用来修改内部的State
+
+1. React.Childern提供了一种可以访问特定组件子元素的方法。它允许用户统计、映射、循环、或者将props.children转换成一个数组。它还允许用户使用React.Children.only对正在显示的单个子节点进行验证
+
+1. React只是一个简单的创建视图的脚本库，因此我们需要将它和其他JavaScript脚本库搭配使用
+
+1. 我们可以将任意JavaScript库与React集成。生命周期函数是其他JavaScript库进入，React库离开的地方。不过我们应该竭力避免添加管理UI的脚本库，这是React的工作。
+
+1. 高阶组件是一个简单的函数，他会接收一个React组件作为参数，然后返回另外一个React组件。通常，HOC会使用一个能够维护State或者包含若干功能的类来包装输入的组件。高阶组件是组件之间功能复用的最佳方式。（实现vue Mixin 类似的功能）
+
+1. 高阶组件能够将组件State和生命周期管理细节封装起来。它允许用户构建更多无状态函数式组件，以便可以一心一意的管理UI
+
+### Redux
+
+1. Redux是基于Flux的，旨在处理应用程序中数据流变化的问题。
+
+1.在构建Redux应用时，用户首先需要考虑的事情就是State树。尝试在单个对象中定义State。使用一些占位符数据操你一个State树的JSON示例是一个非常好的习惯。
