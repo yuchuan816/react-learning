@@ -169,4 +169,14 @@ const compose = (...fns) =>
 
 1. Redux是基于Flux的，旨在处理应用程序中数据流变化的问题。
 
-1.在构建Redux应用时，用户首先需要考虑的事情就是State树。尝试在单个对象中定义State。使用一些占位符数据操你一个State树的JSON示例是一个非常好的习惯。
+1. 通过Redux，我们将State管理和React完全剥离，Redux将会管理这些State
+
+1.在构建Redux应用时，用户首先需要考虑的事情就是State树。尝试在单个对象中定义State。使用一些占位符数据草拟一个State树的JSON示例是一个非常好的习惯。
+
+1.Auction是更新Redux应用程序State的唯一方式。
+
+1. Redux是通过函数来进行模块化的。函数被用来更新部分State树中的内容。这些函数被称为Reducer。
+
+1. 使用Reducer时，最好将State当作不可变对象。
+
+1. 在Redux中，Store就是保存应用程序State数据和处理所有State更新的地方。
