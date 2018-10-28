@@ -180,3 +180,9 @@ const compose = (...fns) =>
 1. 使用Reducer时，最好将State当作不可变对象。
 
 1. 在Redux中，Store就是保存应用程序State数据和处理所有State更新的地方。
+
+1. 总之，Store是Redux应用程序中保存和管理State数据的地方，也是通过Store分发Action的形式，唯一的修改State数据的方式。Store会将应用程序的State作为单个对象进行保存。State的变更是通过Reducer来完成的。Store的创建是通过提供一个Reducer和可选的出事State数据完成的。
+
+1. Action生成器应该是存放所有和后端API交互逻辑相关内容的地方。通过一个Action生成器，我们可以执行异步逻辑，比如请求数据或发送一个API请求。
+
+1. Redux的中间件扮演了Store的分发管道角色。在Redux中，中间件是在分发某个Action过程中一系列顺序执行的若干函数构成，中间件可以作为两个不同层次或者不同软件之间的粘合剂。
